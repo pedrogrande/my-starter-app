@@ -2,13 +2,34 @@
 <html>
 <head>
   <title>Testify</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
+      <%= render 'layouts/navbar' %>
+
+      <div class="inner cover">
+        
+        <%= yield %>
+        
+      </div>
+
+      <div class="mastfoot">
+        <div class="inner">
+          <p><a href="http://coderfactory.co" target="_blank">#LearnToCode</a> <a href="http://twitter.com/coderfactory" target="_blank">@CoderFactory</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

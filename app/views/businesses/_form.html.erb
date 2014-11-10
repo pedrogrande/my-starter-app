@@ -1,0 +1,58 @@
+<%= simple_form_for(@business) do |f| %>
+  <%= f.error_notification %>
+
+  
+  	<div class="form-group">
+    	<%= f.input :logo, input_html: { class: 'form-control'} %>
+    </div>
+  	<div class="form-group">
+    	<%= f.input :background_image, input_html: { class: 'form-control'} %>
+    </div>
+  	<div class="form-group">
+    	<%= f.input :name, input_html: { class: 'form-control'} %>
+    </div>
+  	<div class="form-group">
+    	<%= f.input :info, input_html: { class: 'form-control'} %>
+    </div>
+  	<div class="form-group">
+    	<%= f.input :street, input_html: { class: 'form-control'} %>
+    </div>
+  	<div class="form-group">
+    	<%= f.input :suburb, input_html: { class: 'form-control'} %>
+    </div>
+  	<div class="form-group">
+    	<%= f.input :postcode, input_html: { class: 'form-control'} %>
+    </div>
+  	<div class="form-group">
+    	<%= f.input :state, input_html: { class: 'form-control'} %>
+    </div>
+  	<div class="form-group">
+    	<%= f.input :country, input_html: { class: 'form-control'} %>
+    </div>
+  	<div class="form-group">
+    	<%= f.input :phone, input_html: { class: 'form-control'} %>
+    </div>
+  	<div class="form-group">
+    	<%= f.input :email, input_html: { class: 'form-control'} %>
+    </div>
+  	<div class="form-group">
+    	<%= f.input :twitter, input_html: { class: 'form-control'} %>
+    </div>
+  	<div class="form-group">
+    	<%= f.input :facebook, input_html: { class: 'form-control'} %>
+    </div>
+  	<div class="form-group">
+    	<%= f.input :linkedin, input_html: { class: 'form-control'} %>
+    </div>
+  	<div class="form-group">
+    	<%= f.input :latitude, input_html: { class: 'form-control'} %>
+    </div>
+  	<div class="form-group">
+    	<%= f.input :longitude, input_html: { class: 'form-control'} %>
+    </div>
+  
+
+  <div class="form-actions">
+    <%= f.submit 'Submit', class: 'btn btn-primary' %>
+  </div>
+<% end %>

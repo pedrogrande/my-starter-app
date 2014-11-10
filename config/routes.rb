@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  get 'contact', to: 'contact#index'
+  get 'admin', to: 'admin#index'
+
+  resources :enquiries
+
+  resources :testimonials
+
+  resources :businesses
+
+  resources :profiles
+
   # get 'home/index'
 
   devise_for :users
