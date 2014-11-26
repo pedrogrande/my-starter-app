@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :premium_packages
+
   get 'contact', to: 'contact#index'
   get 'admin', to: 'admin#index'
 
@@ -12,7 +14,7 @@ Rails.application.routes.draw do
 
   # get 'home/index'
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

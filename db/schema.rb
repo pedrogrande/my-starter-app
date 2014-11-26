@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105084802) do
+ActiveRecord::Schema.define(version: 20141112073207) do
 
   create_table "business_users", force: true do |t|
     t.integer  "business_id"
@@ -52,6 +52,16 @@ ActiveRecord::Schema.define(version: 20141105084802) do
     t.datetime "updated_at"
   end
 
+  create_table "premium_packages", force: true do |t|
+    t.integer  "user_id"
+    t.decimal  "price"
+    t.string   "customer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "premium_packages", ["user_id"], name: "index_premium_packages_on_user_id"
+
   create_table "profiles", force: true do |t|
     t.string   "name"
     t.string   "image"
@@ -87,6 +97,8 @@ ActiveRecord::Schema.define(version: 20141105084802) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

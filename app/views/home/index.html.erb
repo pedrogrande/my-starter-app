@@ -1,2 +1,24 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% if user_signed_in? %>
+	<% unless current_user.premium_package %>
+<form action="/premium_packages" method="POST">
+<div style="display:none">
+        <input name="utf8" type="hidden" value="&#x2713;" />
+        <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token %>" />
+    </div>
+
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-image="<%= asset_path 'logo.jpg' %>"
+    data-name="Testify"
+    data-description="Premium Package"
+    data-amount="10000"
+    data-email="<%= current_user.email %>"
+    data-currency="aud">
+  </script>
+</form>
+<% else %>
+<p>Welcome premium package person</p>
+<% end %>
+<% end %>
+

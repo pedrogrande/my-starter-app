@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @premium_package.user %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @premium_package.price %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @premium_package.customer_id %>
+</p>
+
+<%= link_to 'Edit', edit_premium_package_path(@premium_package) %> |
+<%= link_to 'Back', premium_packages_path %>
