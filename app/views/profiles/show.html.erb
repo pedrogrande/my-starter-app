@@ -17,3 +17,37 @@
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>
+
+<div class="col-md-4">
+
+  <div class="stats">
+    <a href="<%= following_user_path(@profile.user) %>" class="btn btn-lg btn-warning">
+      <strong id="following" class="stat">
+      Following 
+        <span class="badge"><%= @profile.user.followed_users.count %></span> users
+      </strong>
+
+    </a>
+    </p>
+    <a href="<%= followers_user_path(@profile.user) %>" class="btn btn-lg btn-warning">
+      <strong class="stat">
+      Followed by
+        <span class="badge" id="followers"><%= @profile.user.followers.count %></span> users
+      </strong>
+
+    </a>
+  </div>
+<br>
+<div class="follow_unfollow">
+<% unless current_user == @profile.user %>
+  <div id="follow_form">
+  <% if current_user.following?(@profile.user) %>
+    <%= render 'unfollow' %>
+  <% else %>
+    <%= render 'follow' %>
+  <% end %>
+  </div>
+<% end %>
+</div>
+</div>
+</div>

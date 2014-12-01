@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
+  get 'inbox', to: 'inbox#index'
+
+  resources :messages
+
   resources :premium_packages
+
+  
+  resources :relationships, only: [:create, :destroy]
 
   get 'contact', to: 'contact#index'
   get 'admin', to: 'admin#index'
@@ -20,7 +27,11 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
-
+  resources :users do
+      member do
+        get :following, :followers
+      end
+    end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
